@@ -20,13 +20,15 @@ const App = () => {
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
+
     const data = await response.json();
 
     setMovies(data.Search);
   };
 
   useEffect(() => {
-    searchMovies("Halloween");
+    searchMovies("");
+    console.log("movie");
   }, []);
 
   return (
